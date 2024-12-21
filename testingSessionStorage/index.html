@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SessionStorage</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    #center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #13111b;
+    }
+
+    #input {
+      padding: 1rem;
+      min-width: 300px;
+    }
+  </style>
+  <body id="center">
+    <input id="input" />
+  </body>
+  <script>
+    const input = document.querySelector("#input");
+
+    window.addEventListener("DOMContentLoaded", () => {
+      if (sessionStorage.getItem("autoSave")) {
+        input.value = sessionStorage.getItem("autoSave");
+      }
+    });
+
+    input.addEventListener("change", () => {
+      sessionStorage.setItem("autoSave", input.value);
+    });
+  </script>
+</html>

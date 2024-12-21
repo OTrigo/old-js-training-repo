@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drum Kit</title>
+  </head>
+  <body>
+    <main>
+      <button id="hihat">Hi-hat</button>
+    </main>
+  </body>
+  <script async>
+    const hiHatButton = document.getElementById("hihat");
+    const hiHatAudio = new Audio("./hihat.mp3");
+
+    hiHatButton.addEventListener("click", () => {
+      hiHatAudio.play();
+      console.log("playing audio");
+    });
+
+    document.onkeydown = (e) => {
+      if (e.key === "H" || e.key === "h") {
+        hiHatAudio.play();
+        console.log("playing audio");
+      }
+    };
+
+    hiHatButton.addEventListener("", () => {
+      hiHatAudio.play();
+      console.log("playing audio");
+    });
+  </script>
+</html>

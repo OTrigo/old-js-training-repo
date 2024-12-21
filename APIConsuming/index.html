@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consuming GET API</title>
+  </head>
+  <body></body>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const body = document.querySelector("body");
+      const getAdvice = async () => {
+        const advice = await fetch("https://api.adviceslip.com/advice");
+        const response = await advice.json();
+        console.log(response);
+        body.innerHTML = response.slip.advice;
+      };
+      getAdvice();
+    });
+  </script>
+</html>

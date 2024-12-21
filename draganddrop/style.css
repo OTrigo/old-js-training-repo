@@ -1,0 +1,46 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #13111b;
+}
+
+.kanban {
+  display: flex;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #3b394d;
+  min-width: 200px;
+  border-radius: 5px;
+}
+
+.item {
+  height: 50px;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #f1faff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
